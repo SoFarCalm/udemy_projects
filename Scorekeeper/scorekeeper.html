@@ -3,20 +3,23 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="scorekeeper.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css">
     <title>Score Keeper</title>
   </head>
   <body>
 
     <div id="container">
-      <h1>Scorekeeper</h1>
-      <h2><span id="p1display">0</span> to <span id="p2display">0</span></h2>
+      <div id="background">
+        <h1>ScoreKeeper</h1>
+        <h2><span id="p1display">0</span> to <span id="p2display">0</span></h2>
 
-      <p>Playing to: <span id="winScore">5</span></p>
+        <p>Playing to: <span id="winScore">5</span></p>
 
-      <input type="number">
-      <button id="p1">Player 1</button>
-      <button id="p2">Player 2</button>
-      <button id="reset">Reset</button>
+        <input type="number" placeholder="Select Win Score">
+        <button id="p1" class="btn">Player 1 <i class="fa fa-plus" aria-hidden="true"></i></button>
+        <button id="p2" class="btn">Player 2 <i class="fa fa-plus" aria-hidden="true"></i></button>
+        <button id="reset" class="btn">Reset</button>
+      </div>
     </div>
 
   <script type="text/javascript" src="scorekeeper.js"></script>
