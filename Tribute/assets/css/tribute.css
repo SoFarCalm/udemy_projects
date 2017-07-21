@@ -10,7 +10,8 @@ body {
   color: white;
 }
 
-h4 {
+p:nth-child(-n+4) {
   line-height: 1.5;
   font-family: Roboto, Arial;
+  font-size: 18px;
 }
