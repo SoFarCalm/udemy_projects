@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Circles</title>
+    <script type="text/javascript" src="assets/js/lib/paper-full.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/circles.css">
+
+    <script type="text/paperscript" canvas="myCanvas">
+      function createCircle(num1, num2, num3){
+        new Path.Circle(new Point(num1, num2), 10).fillColor = "rgb(0, 0, " + num3 + ")";
+      }
+
+      function randomCircles(){
+        var x = 10;
+        var y = 20;
+        var b = 255;
+        for (var i = 0; i <= 115; i++) {
+          createCircle(x, y, b);
+          if (x > 1200) {
+            x = 10;
+            y += 100;
+          }
+          x += 100;
+          b -= 2;
+        }
+      }
+
+      randomCircles();
+    </script>
+  </head>
+  <body>
+    <canvas id="myCanvas" resize></canvas>
+  </body>
+</html>
