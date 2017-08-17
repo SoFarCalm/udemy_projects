@@ -6,7 +6,6 @@ i.icon {
     margin-top: 7em;
 }
 
-img {
-    height: 400px;
-    width: 620px;
+#delete {
+    display: inline;
 }
