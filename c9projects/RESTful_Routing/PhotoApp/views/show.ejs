@@ -1,0 +1,14 @@
+<% include ./partials/header.ejs %>
+    <div class="container">
+       <div class="polaroid">
+           <img width="600" height="400" src="<%= photo.image %>">
+           <div>
+               <p><%= photo.caption %></p>
+           </div>
+       </div>
+       <a class="ui orange basic button" href="/photos/<%= photo._id %>/edit">Edit</a>
+       <form id="delete"action="/photos/<%= photo._id %>?_method=DELETE" method="POST">
+           <button class="ui red basic button">Delete</button>
+       </form>
+    </div>
+<% include ./partials/footer.ejs %>

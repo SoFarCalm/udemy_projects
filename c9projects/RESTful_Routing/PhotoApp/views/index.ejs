@@ -1,0 +1,13 @@
+<% include ./partials/header.ejs %>
+    <div class="container">
+        <div class="ui centered grid">
+            <% photos.forEach(function(photo){ %>
+            <div class="columns">
+                <img width="400" height="200" src="<%= photo.image %>">
+                <p><%- photo.caption.substring(0, 50) %></p>
+                <a href="/photos/<%= photo._id %>">Expand</a>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+<% include ./partials/footer.ejs %>
