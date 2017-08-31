@@ -5,7 +5,7 @@
             <div class="columns">
                 <img width="400" height="200" src="<%= photo.image %>">
                 <p><%- photo.caption.substring(0, 50) %></p>
-                <a href="/photos/<%= photo._id %>">Expand</a>
+                <a class="ui teal button" href="/photos/<%= photo._id %>">Expand</a>
             </div>
             <% }); %>
         </div>
