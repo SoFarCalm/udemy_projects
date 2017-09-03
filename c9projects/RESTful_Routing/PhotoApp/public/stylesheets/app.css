@@ -45,3 +45,8 @@ p {
 .main.text.container.segment {
     margin-top: 150px;
 }
+
+.showtxt {
+    color: black;
+    font-size: 16px;
+}
