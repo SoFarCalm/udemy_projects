@@ -18,10 +18,10 @@ var ballRadius = 10;
 
 //values of bricks
 const BRICK_W = 80;
-const BRICK_H = 40; //temporarily doubled
+const BRICK_H = 20;
 const BRICK_COLS = 10;
 const BRICK_GAP = 2;
-const BRICK_ROWS = 7; //temporarily halved
+const BRICK_ROWS = 14; //temporarily halved
 var brickGrid = new Array(BRICK_COLS * BRICK_ROWS);
 
 //values of the paddle
@@ -53,10 +53,16 @@ function updateMousePos(evt) {
 }
 
 function brickReset() {
-  for(var i=0; i<BRICK_COLS * BRICK_ROWS; i++) {
+  bricksLeft = 0;
+  var i
+  for(i=0; i<3 * BRICK_COLS;i++) {
+      brickGrid[i] = false;
+  }
+  for(;i<BRICK_COLS * BRICK_ROWS; i++) {
       brickGrid[i] = true;
-    }
-}
+      bricksLeft++;
+  } //end of each brick
+} // end of brickReset func
 
 window.onload = function() {
   canvas = document.getElementById("gameCanvas");
@@ -111,11 +117,13 @@ function ballBrickHandling(){
 
        if(brickGrid[brickIndexUnderball]) {
          brickGrid[brickIndexUnderball] = false;
+         bricksLeft--;
+         console.log(bricksLeft);
 
          var prevBallX = ballX - ballSpeedX;
          var prevBallY = ballY - ballSpeedY;
          var prevBrickCol = Math.floor(prevBallX / BRICK_W);
-         var prevBrickCol = Math.floor(prevBallY / BRICK_H);
+         var prevBrickRow = Math.floor(prevBallY / BRICK_H);
 
          var bothTestFailed = true;
          if(prevBrickCol != ballBrickCol) {
